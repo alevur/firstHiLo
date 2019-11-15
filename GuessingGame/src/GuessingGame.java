@@ -7,6 +7,9 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Color;
+import java.awt.Window.Type;
+import java.awt.Dialog.ModalExclusionType;
 
 public class GuessingGame extends JFrame {
 	private JTextField txtGuess;
@@ -17,6 +20,7 @@ public class GuessingGame extends JFrame {
 	public void checkGuess () {
 		String guessText = txtGuess.getText();
 		String message = "";
+		
 
 		try {
 
@@ -48,6 +52,7 @@ public class GuessingGame extends JFrame {
 		btnPlayAgain.setVisible(false);
 	}
 	public GuessingGame() {
+		setBackground(Color.GRAY);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setTitle(" HiLo v. 0.1");
 		getContentPane().setLayout(null);
@@ -55,13 +60,13 @@ public class GuessingGame extends JFrame {
 		JLabel lblCreatedByAlevur = new JLabel("Created by Alevur");
 		lblCreatedByAlevur.setFont(new Font("Tahoma", Font.BOLD, 11));
 		lblCreatedByAlevur.setHorizontalAlignment(SwingConstants.CENTER);
-		lblCreatedByAlevur.setBounds(365, 295, 115, 14);
+		lblCreatedByAlevur.setBounds(129, 232, 115, 14);
 		getContentPane().add(lblCreatedByAlevur);
 
 		JLabel label = new JLabel("\u041E\u0442\u0433\u0430\u0434\u0430\u0439\u0442\u0435 \u0447\u0438\u0441\u043B\u043E \u043C\u0435\u0436\u0434\u0443 1 \u0438 100:");
 		label.setFont(new Font("Tahoma", Font.BOLD, 17));
 		label.setHorizontalAlignment(SwingConstants.CENTER);
-		label.setBounds(99, 30, 288, 21);
+		label.setBounds(50, 11, 288, 21);
 		getContentPane().add(label);
 
 		txtGuess = new JTextField();
@@ -71,7 +76,7 @@ public class GuessingGame extends JFrame {
 			}
 		});
 		txtGuess.setHorizontalAlignment(SwingConstants.CENTER);
-		txtGuess.setBounds(197, 86, 86, 36);
+		txtGuess.setBounds(141, 55, 86, 36);
 		getContentPane().add(txtGuess);
 		txtGuess.setColumns(10);
 
@@ -82,13 +87,13 @@ public class GuessingGame extends JFrame {
 				checkGuess();
 			}
 		});
-		btnGuess.setBounds(194, 156, 89, 36);
+		btnGuess.setBounds(141, 116, 89, 36);
 		getContentPane().add(btnGuess);
 
 		lblOutput = new JLabel("\u041D\u0430\u043F\u0435\u0447\u0430\u0442\u0430\u0439\u0442\u0435 \u0447\u0438\u0441\u043B\u043E \u0432 \u043F\u043E\u043B\u0435 \u0432\u0432\u043E\u0434\u0430 \u0438 \u043D\u0430\u0436\u043C\u0438\u0442\u0435 \u043A\u043D\u043E\u043F\u043A\u0443 \"\u0423\u0433\u0430\u0434\u0430\u0442\u044C\" ");
 		lblOutput.setHorizontalAlignment(SwingConstants.CENTER);
 		lblOutput.setFont(new Font("Tahoma", Font.PLAIN, 11));
-		lblOutput.setBounds(28, 228, 428, 21);
+		lblOutput.setBounds(-20, 214, 428, 21);
 		getContentPane().add(lblOutput);
 
 		btnPlayAgain = new JButton("\u0418\u0433\u0440\u0430\u0442\u044C \u0441\u043D\u043E\u0432\u0430");
@@ -97,7 +102,7 @@ public class GuessingGame extends JFrame {
 				newGame();
 			}
 		});
-		btnPlayAgain.setBounds(333, 156, 110, 36);
+		btnPlayAgain.setBounds(134, 167, 110, 36);
 		getContentPane().add(btnPlayAgain);
 	}
 
